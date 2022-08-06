@@ -1,0 +1,15 @@
+<h1 class="title">Add To-Do</h1>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <form class="col col-lg-3" (ngSubmit)="saveTodo()">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="New To-Do activity"
+          arial-describedby="button-addon2" [(ngModel)]="name" name="new-todo">
+      </div>
+      <div class="d-grid col-12">
+        <button class="btn btn-outline-success" type="button" id="button-addon2" type="submit">Create</button>
+      </div>
+    </form>
+  </div>
+</div>

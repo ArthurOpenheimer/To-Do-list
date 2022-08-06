@@ -1,0 +1,26 @@
+<h1 class="title">To-Do List</h1>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <table class="table table-striped" *ngIf="todos?.length > 0; else empty">
+      <thead>
+        <th class="col col-lg-1">#</th>
+        <th class="col col-lg-10">Task</th>
+        <th class="col col-lg-1">Finish</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todos; let i = index;">
+          <td>{{i+1}}</td>
+          <td>{{todo.name}}</td>
+          <td><button type="button" class="btn btn-default btn-sm" (click)="delete(todo)">Finished</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #empty>
+    <p class="d-flex justify-content-center">Add a new activity to do</p>
+  </ng-template>
+</div>
+
+
