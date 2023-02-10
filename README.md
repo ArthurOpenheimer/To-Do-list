@@ -1,5 +1,5 @@
 # To-do List
-<img src="https://img.shields.io/badge/-Angular-red"> <img src="https://img.shields.io/badge/-PDSoluções-blue">
+<img src="https://img.shields.io/badge/-Angular-red">
 
 This project is a simple To-do list, created using Angular, with the objective to learn more about Angular and TypeScript.
 
@@ -18,9 +18,9 @@ After cloning the project and installing all its dependencies, do the following 
 
 ### Running the application
 
-Run `ng serve` for a dev server.  
+In your terminal, run `ng serve` for a dev server.  
 Navigate to `http://localhost:4200/` to see the application.  
 
-### Running the database
-In a new terminal, run `json-server --watch db.json`, to run the json database.  
-Navigate to `http://localhost:3000/todos` to see the database.
+### Running the back-end
+
+In [this](https://github.com/ArthurOpenheimer/To-Do-Backend) repository you will find the back-end for this application and it's steps to run the back-end.
