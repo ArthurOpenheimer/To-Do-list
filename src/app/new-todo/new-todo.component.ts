@@ -13,9 +13,16 @@ export class NewTodoComponent {
   constructor(private service: NewTodoService, private router: Router){}
 
   name: string;
+  user: any;
+
+  //get user id from logged user
+  get_user_id(){
+    this.user = localStorage.getItem('user_id');
+    return this.user;
+  }
 
   saveTodo() {
-    const todo: Todo = {name: this.name};
+    const todo: Todo = {name: this.name, user: this.get_user_id()};
     this.service.saveTodo(todo).subscribe(todos =>{
       this.clear();
     })

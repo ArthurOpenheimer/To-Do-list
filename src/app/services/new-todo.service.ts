@@ -9,10 +9,7 @@ import { Todo } from '../models/todo.model'
 export class NewTodoService {
 
   private todoslist: Todo[];
-  private url = 'http://localhost:3000/todos'
-
-  delete_url: string;
-  name: string;
+  private url = 'http://localhost:8000/'
 
   constructor(private httpClient: HttpClient){
     this.todoslist = [];
@@ -22,15 +19,15 @@ export class NewTodoService {
     return this.todoslist;
   }
 
-  get_todo(): Observable<Todo[]>{
-    return this.httpClient.get<Todo[]>(this.url);
+  get_todo(id: number): Observable<Todo[]>{
+    return this.httpClient.get<Todo[]>(`${this.url}users/${id}/todos`);
   }
 
   saveTodo(todo: Todo): Observable<Todo[]>{
-    return this.httpClient.post<Todo[]>(this.url, todo);
+    return this.httpClient.post<Todo[]>(`${this.url}/todos/`, todo);
   }
 
   delete(id: number){
-    return this.httpClient.delete(this.url+'/'+id);
+    return this.httpClient.delete(`${this.url}/todos/${id}`);
   }
 }

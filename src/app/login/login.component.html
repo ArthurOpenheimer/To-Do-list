@@ -1,0 +1,17 @@
+<h1 class="title">Login</h1>
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <form class="col col-lg-3" (ngSubmit)="FindUser()">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" name="username">
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="password" [(ngModel)]="password" name="password">
+        </div>
+        <div class="d-grid col-12">
+          <button class="btn btn-outline-success" type="button" (click)="go_to_add_todo()" id="button-addon2" type="submit">Login</button>
+        </div>
+    </form>
+  </div>
+</div>

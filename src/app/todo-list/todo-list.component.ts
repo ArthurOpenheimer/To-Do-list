@@ -10,21 +10,26 @@ import { Todo } from '../models/todo.model'
 export class TodoListComponent implements OnInit {
 
   todos: any[];
+  user_id = this.get_user_id();
 
   constructor(private service: NewTodoService) { }
 
+  get_user_id(){
+    return localStorage.getItem('user_id');
+  }
+
   ngOnInit(): void {
-    this.service.get_todo().subscribe((todos: Todo[]) => {
+    this.service.get_todo(parseInt(this.user_id)).subscribe((todos: Todo[]) => {
       this.todos = todos;
     })
   }
 
-  delete(todo: Todo){
-    this.service.delete(todo.id).subscribe(()=>{
-      this.service.get_todo().subscribe((todos: Todo[]) => {
-        this.todos = todos;
-      });
-  });
+   delete(todo: Todo){
+     this.service.delete(todo.id).subscribe(()=>{
+       this.service.get_todo(parseInt(this.user_id)).subscribe((todos: Todo[]) => {
+         this.todos = todos;
+       });
+   });
   }
 
 }

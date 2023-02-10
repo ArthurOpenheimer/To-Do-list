@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   declarations: [
     AppComponent,
       NewTodoComponent,
-      TodoListComponent
+      TodoListComponent,
+      LoginComponent
    ],
   imports: [
     BrowserModule,
